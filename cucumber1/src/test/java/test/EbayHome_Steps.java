@@ -20,7 +20,7 @@ public class EbayHome_Steps {
 
 	@Then("I navigate to Advanced search page")
 	public void i_navigate_to_advanced_search_page() {
-	    // Write code here that turns the phrase above into concrete actions
+	    // Write code here that turns the phrase above into 
 	    
 	}
 
