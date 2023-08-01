@@ -10,10 +10,10 @@ import io.cucumber.junit.*;
 			features = {"features"},
 			glue = {"steps"},
 			plugin = {"pretty", "html:Report"},
-			dryRun = true,
-			monochrome = true,
+			dryRun = false, // if dryRun is TRUE only will tell you which steps are missing to implement. FALSE is the default 
+			monochrome = true
 			//tags = ("@SmokeTests"), // this tag option can determine which scenarios will run
-			name = {"Advanced"} // this name option works by identifying all the match with that word on the scenario name existing.
+			//name = {"Advanced"} // this name option works by identifying all the match with that word on the scenario name existing.
 		)
 public class TestRunner {
 
