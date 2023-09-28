@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -43,6 +44,20 @@ public class EbayHome_Steps {
 	@When("I click on advanced link")
 	public void i_click_on_advanced_link() {
 		driver.findElement(By.xpath("//*[@id='gh-as-a']")).click();
+	}
+	
+	@When("I search for {string}")
+	public void i_search_for_parameter(String str1) throws InterruptedException {
+		driver.findElement(By.xpath("//*[@id='_nkw']")).sendKeys(str1);
+		driver.findElement(By.xpath("/html/body/div[3]/div/main/form/div[2]/button")).click();
+		Thread.sleep(3000);
+	}
+	
+	@When("I search for specifics")
+	public void i_search_for_specifics(DataTable dataTable) throws InterruptedException {
+		driver.findElement(By.xpath("//*[@id='_nkw']")).sendKeys(dataTable.cell(1, 0));
+		driver.findElement(By.xpath("/html/body/div[3]/div/main/form/div[2]/button")).click();
+		Thread.sleep(3000);
 	}
 
 	@Then("I navigate to Advanced search page")
